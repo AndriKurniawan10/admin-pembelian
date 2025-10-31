@@ -1,0 +1,93 @@
+🛒 Sistem Admin Pembelian Sederhana
+
+Aplikasi berbasis Node.js + Express.js + EJS + MySQL yang digunakan untuk mengelola data produk, stok, dan pembelian di toko. Admin dapat menambahkan pembelian baru, membatalkan pembelian, serta memantau stok produk secara langsung.
+🚀 Fitur Utama
+
+Menampilkan daftar produk (10 produk awal)
+
+Menambahkan data pembelian
+
+Membatalkan (cancel) pembelian
+
+Mengelola stok produk otomatis berdasarkan pembelian
+
+Tampilan UI sederhana menggunakan EJS
+🧱 Tech Stack
+
+Backend: Node.js, Express.js
+
+Frontend: EJS, HTML, CSS
+
+Database: MySQL
+
+Package Manager: npm
+⚙️ Cara Instalasi
+
+Clone repository
+
+git clone https://github.com/username/nama-repo.git
+cd nama-repo
+
+Install dependencies
+
+npm install
+
+Setup database
+
+Buka phpMyAdmin atau MySQL CLI
+
+Buat database baru, misalnya:
+
+CREATE DATABASE db_toko;
+
+Import file db_toko.sql yang ada di folder project.
+
+Konfigurasi koneksi database
+
+Buka file config/db.js
+
+Sesuaikan dengan konfigurasi MySQL kamu:
+
+const mysql = require('mysql2');
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'db_toko'
+});
+module.exports = connection;
+
+Jalankan aplikasi
+
+npm start
+
+atau
+
+node app.js
+
+Akses di browser
+
+http://localhost:3000
+
+📁 Struktur Folder
+├── app.js
+├── package.json
+├── config/
+│   └── db.js
+├── routes/
+│   ├── produk.js
+│   ├── pembelian.js
+│   └── index.js
+├── views/
+│   ├── produk.ejs
+│   ├── pembelian.ejs
+│   └── layout.ejs
+├── public/
+│   └── style.css
+├── db_toko.sql
+└── README.md
+👨‍💻 Pengembang
+
+Nama: Andri Kurniawan
+Universitas: Universitas Faletehan
+Prodi: Informatika
