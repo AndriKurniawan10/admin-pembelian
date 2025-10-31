@@ -1,0 +1,16 @@
+<%- include("layout", { body: `
+<h2>Tambah Produk Baru</h2>
+
+<form action="/tambah" method="POST">
+  <label>Nama Produk:</label><br>
+  <input type="text" name="nama" required><br><br>
+
+  <label>Harga Produk:</label><br>
+  <input type="number" name="harga" required><br><br>
+
+  <label>Stok Awal:</label><br>
+  <input type="number" name="stok" required><br><br>
+
+  <button type="submit">Simpan</button>
+</form>
+` }) %>

@@ -1,0 +1,32 @@
+<%- include("layout", { body: `
+<h2>Riwayat Pembelian</h2>
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <tr>
+    <th>No</th>
+    <th>Produk</th>
+    <th>Jumlah</th>
+    <th>Total Harga</th>
+    <th>Status</th>
+    <th>Tanggal</th>
+    <th>Aksi</th>
+  </tr>
+  ${pembelian.map((p, i) => `
+  <tr>
+    <td>${i + 1}</td>
+    <td>${p.nama}</td>
+    <td>${p.jumlah}</td>
+    <td>Rp ${p.total_harga.toLocaleString()}</td>
+    <td>${p.status}</td>
+    <td>${p.tanggal}</td>
+    <td>
+      ${p.status === 'SUKSES' ? `
+        <form action="/cancel/${p.id}" method="POST" onsubmit="return confirm('Batalkan pembelian ini?')">
+          <button type="submit" style="background:orange;">Cancel</button>
+        </form>
+      ` : '—'}
+    </td>
+  </tr>
+  `).join("")}
+</table>
+` }) %>

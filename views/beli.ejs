@@ -1,0 +1,12 @@
+<%- include("layout", { body: `
+<h2>Pembelian Produk</h2>
+
+<p><strong>Nama Produk:</strong> ${produk.nama}</p>
+<p><strong>Harga:</strong> Rp ${produk.harga.toLocaleString()}</p>
+
+<form action="/beli/${produk.id}" method="POST">
+  <label>Jumlah Beli:</label><br>
+  <input type="number" name="jumlah" required min="1"><br><br>
+  <button type="submit" style="background:green;">Simpan Pembelian</button>
+</form>
+` }) %>
